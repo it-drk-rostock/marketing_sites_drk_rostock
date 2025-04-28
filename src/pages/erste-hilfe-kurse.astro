@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Logo from "../assets/images/logo.svg";
+import QrCode from "../components/qr-code.tsx";
+import QueryProviderFirstAid from "../components/query-provider-first-aid.tsx";
+import { Image } from "astro:assets";
+---
+
+<Layout title="Welcome to Astro.">
+  <nav class="px-6 w-1/2">
+    <div class="flex flex-row items-center justify-between py-4 h-[108px]">
+      <div class="flex flex-row items-center gap-4 h-full w-1/2 pr-6">
+        <Image src={Logo} width={192} alt="descriptive text" />
+        <div class="h-full w-[2px] border-l bg-secondary-secondary"></div>
+        <h1 class="font-poppins font-bold text-3xl">Rostock</h1>
+      </div>
+      <div class="w-1/2 text-right pl-6 flex flex-row justify-end items-center">
+        <div class="flex gap-4">
+          <p class="font-poppins text-md text-primary-primary text-right">
+            Wir freuen uns auf Ihre Anmeldung!
+          </p>
+          <QrCode
+            client:only
+            value="https://www.drk-rostock.de/angebote/kurse/erste-hilfe-kurse.html"
+          />
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main class="px-6 w-1/2">
+    <div class="main mt-8 flex flex-col items-start gap-8 pb-12">
+      <h2 class="font-poppins text-5xl text-primary-primary text-left">
+        Erste-Hilfe Kurse
+      </h2>
+      <div class="flex flex-col items-start justify-center h-full w-full gap-6">
+        <div
+          class="h-full w-full flex flex-col justify-center items-start rounded-md relative"
+        >
+          <div
+            class="absolute top-12 -left-6 bg-primary-primary w-[1000px] h-[400px] opacity-10"
+          >
+          </div>
+
+          <div>
+            <h3 class="font-poppins text-4xl text-primary-primary mb-1">
+              Ihr Kontakt zu uns:
+            </h3>
+            <ul class="text-xl font-poppins text-secondary-primary">
+              <li>Erste Hilfe</li>
+              <li>Trelleborger Straße 11 18107 Rostock</li>
+              <li>Tel. 0381 24 27 9-222</li>
+              <li>E-Mail: erste-hilfe@drk-rostock.de</li>
+            </ul>
+          </div>
+          <div></div>
+        </div>
+        <div class="flex flex-col w-full h-1/2 justify-center">
+          <h3 class="font-poppins text-4xl text-tertiary-secondary mb-1 mt-6">
+            Wegbeschreibung zum Kurs:
+          </h3>
+          <ul>
+            <li class="font-poppins text-4xl font-bold text-secondary-primary">
+              1. Etage rechts, Raum 1.1.05 Malmö
+            </li>
+            <li class="font-poppins text-xl text-secondary-primary">
+              Kursdauer: von 8 bis 16 uhr
+            </li>
+          </ul>
+        </div>
+        <div
+          class="absolute bottom-6 left-0 bg-tertiary-secondary w-[1000px] h-[400px] opacity-10"
+        >
+        </div>
+      </div>
+      <div class="absolute top-6 right-6 h-full w-1/2 pb-12 pl-6">
+        <QueryProviderFirstAid client:only />
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .main {
+    height: calc(100vh - 120px);
+  }
+</style>

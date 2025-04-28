@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font family */
+  --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* Container padding */
+  --container-padding: 6rem;
+
+  /* Custom colors */
+  --color-primary-primary: #e60005;
+  --color-primary-secondary: #e46450;
+  --color-primary-tertiary: #a51e0f;
+
+  --color-secondary-primary: #554f4a;
+  --color-secondary-secondary: #b4b4b4;
+
+  --color-tertiary-primary: #002d55;
+  --color-tertiary-secondary: #008ccd;
+  --color-tertiary-tertiary: #2275d0;
+  --color-tertiary-quaternary: #ebf5ff;
+}
